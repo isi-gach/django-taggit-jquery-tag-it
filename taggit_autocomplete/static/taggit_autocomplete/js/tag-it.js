@@ -539,4 +539,21 @@
     });
 })(jQuery);
 
-
+/*
+* Set tagSource for all tag form fields.
+* HACK: This code is not original from tag-it jquery ui, move this code
+* to another location if you don't import this library.
+*/
+$(document).ready(function() {
+    $(".tagautocomplete").tagit({
+        caseSensitive: false,
+        tagSource: function(search, showChoices) {
+            options = this;
+            $.getJSON("/taggit_autocomplete/list/", {
+                q: search.term.toLowerCase()
+            }, function(data) {
+                showChoices(options._subtractArray(data, options.assignedTags()));
+            });
+        }
+    });
+});

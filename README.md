@@ -64,3 +64,8 @@ Example:
     
     class SomeModel(models.Model):
         tags = TaggableManager()
+
+Include form media in template after jquery.ui load: {{ someform.media }}
+or apply jquery tagit function to input fields.
+(See class Media in widget TagAutocomplete and tag-it.js button file code)
+More info: https://docs.djangoproject.com/en/1.0/topics/forms/media/

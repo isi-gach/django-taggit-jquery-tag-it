@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.text import capfirst
 
 from taggit.forms import TagField
 from taggit.managers import TaggableManager as BaseTaggableManager
@@ -9,7 +9,7 @@ from widgets import TagAutocomplete
 class TaggableManager(BaseTaggableManager):
     def formfield(self, form_class=TagField, **kwargs):
         defaults = {
-            "label": _("Tags"),
+            "label": capfirst(self.verbose_name),
             "help_text": _("A comma-separated list of tags."),
             "required": not self.blank,
         }

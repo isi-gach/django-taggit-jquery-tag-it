@@ -547,6 +547,7 @@
 $(document).ready(function() {
     $(".tagautocomplete").tagit({
         caseSensitive: false,
+        allowSpaces: true,
         tagSource: function(search, showChoices) {
             options = this;
             $.getJSON("/taggit_autocomplete/list/", {

@@ -51,6 +51,9 @@ Installation
 
 5. Enjoy
 
+* Extra settings: TAGGIT_AUTOCOMPLETE_FILTERS - dictionary with filter over
+autocomplete tags, example {'name__icontains': 'fashion'}
+
 Usage
 -----
 

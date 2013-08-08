@@ -1,4 +1,5 @@
 from django.utils.text import capfirst
+from django.utils.translation import ugettext_lazy as _
 
 from taggit.forms import TagField
 from taggit.managers import TaggableManager as BaseTaggableManager
